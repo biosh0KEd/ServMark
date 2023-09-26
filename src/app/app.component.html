@@ -1,3 +1,9 @@
+<p><input type="text" [(ngModel)]="imgParent"/></p>
+<app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
+
+<app-product [product]="product"  *ngFor="let product of products"></app-product>
+
+
 <h1>Formulario</h1>
 <form (ngSubmit)="onRegister()" #myForm="ngForm">
   <div class="input-group">
@@ -66,7 +72,7 @@
 
 <h1>*ngFor Objs</h1>
 <div class="products-grid">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products1">
     <img width="250" [src]="product.image" alt="image"/>
     <h2>{{ product.price }}</h2>
     <p>{{ product.name }}</p>
