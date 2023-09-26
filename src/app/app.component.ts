@@ -45,4 +45,21 @@ export class AppComponent {
     }
   ];
 
+
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
+
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+
+  onRegister() {
+    console.log(this.register);
+  }
+
 }
