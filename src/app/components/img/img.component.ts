@@ -10,14 +10,10 @@ export class ImgComponent implements OnInit{
   @Output() loaded = new EventEmitter<string>();
 
   imageDefault: string = '../../../assets/images/album.jpg';
-
-  counter: number = 0;
+  
 
   ngOnInit(): void {
-    window.setInterval(() => {
-      this.counter++;
-      console.log(this.counter);
-    }, 1000);
+    
   }
 
 
