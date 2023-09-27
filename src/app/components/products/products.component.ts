@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product.model';
+import { StoreService } from '../../services/store.service';
 
 @Component({
   selector: 'app-products',
@@ -7,6 +8,9 @@ import { Product } from '../../models/product.model';
   styleUrls: ['./products.component.sass']
 })
 export class ProductsComponent {
+  myShoppingCart: Product[] = [];
+  total: number = 0;
+
   products: Product[] = [
     {
       id: '1',
@@ -33,4 +37,13 @@ export class ProductsComponent {
       image: '../assets/images/books.jpg'
     }
   ]
+
+  constructor(private storeService: StoreService) {
+    this.myShoppingCart = this.storeService.getMyShoppingCart();    
+  }
+
+  onAddToShoppingCart(product: Product): void {
+    this.storeService.addProduct(product);
+    this.total = this.storeService.getTotal();    
+  }
 }

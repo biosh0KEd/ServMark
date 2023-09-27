@@ -10,7 +10,7 @@
       border: 0
       background: transparent
     
-    
+
 .hide-mobile 
   display: none
   box-shadow: 0px 2px 5px rgb(black, .2)
@@ -37,6 +37,20 @@
     .account 
       margin-right: .5em
 
+.side-menu
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background: white
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    transform: translateX(-100%)
+    transition: all ease-out 0.5s
+    &.active
+      transform: translateX(0)
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) 

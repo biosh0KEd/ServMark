@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.sass']
 })
 export class NavComponent {
+  activeMenu = false;
 
+  toggleMenu() {
+    this.activeMenu = !this.activeMenu;
+  }
 }
