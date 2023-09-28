@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Product as Product1 } from './product.model';
-import { Product } from './models/product.model';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,9 @@ import { Product } from './models/product.model';
 })
 export class AppComponent {
   title = 'serv-mark';
-  name: string = '';
-  widthImg: number = 10;
-  imageUrl: string = '../assets/images/toy.jpg';
+  name = '';
+  widthImg = 10;
+  imageUrl = '../assets/images/toy.jpg';
   products1: Product1[] = [
     {
       name: 'El mejor juguete',
@@ -64,7 +63,7 @@ export class AppComponent {
   }
 
 
-  imgParent: string = 'https://www.w3schools.com/howto/img_avatar.jpg';
+  imgParent = 'https://www.w3schools.com/howto/img_avatar.jpg';
 
   onLoaded(img: string) {
     console.log('Imagen cargada en padre. ' + img);
