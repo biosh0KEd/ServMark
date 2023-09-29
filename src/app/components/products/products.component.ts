@@ -12,8 +12,8 @@ import { ProductsService } from '../../services/products.service';
 export class ProductsComponent implements OnInit {
   myShoppingCart: Product[] = [];
   total = 0;
-
   products: Product[] = [];
+  showProductDetail = false;
 
   constructor(
     private storeService: StoreService,
@@ -31,5 +31,9 @@ export class ProductsComponent implements OnInit {
   onAddToShoppingCart(product: Product): void {
     this.storeService.addProduct(product);
     this.total = this.storeService.getTotal();    
+  }
+
+  toggleProductDetail(): void {
+    this.showProductDetail = !this.showProductDetail;
   }
 }
