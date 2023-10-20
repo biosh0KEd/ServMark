@@ -12,6 +12,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { NavComponent } from './components/nav/nav.component';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SigninComponent } from './components/auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HighlightDirective } from './directives/highlight.directive';
     ProductsComponent,
     NavComponent,
     ReversePipe,
-    HighlightDirective
+    HighlightDirective,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
