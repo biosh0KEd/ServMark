@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../models/product.model';
 
 import { StoreService } from '../../services/store.service';
@@ -9,10 +9,10 @@ import { ProductsService } from '../../services/products.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.sass']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
   myShoppingCart: Product[] = [];
   total = 0;
-  products: Product[] = [];
+  @Input() products: Product[] = [];
   showProductDetail = false;
 
   constructor(
@@ -20,13 +20,7 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService    
     ) {
     this.myShoppingCart = this.storeService.getMyShoppingCart();    
-  }
-
-  ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
-  }
+  }  
 
   onAddToShoppingCart(product: Product): void {
     this.storeService.addProduct(product);

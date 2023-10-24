@@ -14,6 +14,13 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { MyCartComponent } from './pages/my-cart/my-cart.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { SigninComponent } from './components/auth/signin/signin.component';
     ReversePipe,
     HighlightDirective,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    HomeComponent,
+    NotFoundComponent,
+    CategoryComponent,
+    MyCartComponent,
+    RegisterComponent,
+    RecoveryComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
