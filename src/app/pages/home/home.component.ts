@@ -21,4 +21,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  onLoadMore(): void {
+    this.productsService.getAllProducts().subscribe((products) => {
+      this.products = this.products.concat(products);
+    });
+  }
+
 }

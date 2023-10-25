@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product.model';
 
 import { StoreService } from '../../services/store.service';
@@ -13,6 +13,7 @@ export class ProductsComponent {
   myShoppingCart: Product[] = [];
   total = 0;
   @Input() products: Product[] = [];
+  @Output() loadMore = new EventEmitter();
   showProductDetail = false;
 
   constructor(
@@ -29,5 +30,9 @@ export class ProductsComponent {
 
   toggleProductDetail(): void {
     this.showProductDetail = !this.showProductDetail;
+  }
+
+  onLoadMore(): void {
+    this.loadMore.emit();
   }
 }
