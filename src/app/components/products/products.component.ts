@@ -10,11 +10,14 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products.component.sass']
 })
 export class ProductsComponent {
-  myShoppingCart: Product[] = [];
-  total = 0;
   @Input() products: Product[] = [];
   @Output() loadMore = new EventEmitter();
+
+  myShoppingCart: Product[] = [];
+  total = 0;
   showProductDetail = false;
+  productChosen: Product | null = null;
+  statusDetail: 'loading'| 'success' | 'error' | 'init' = 'init';
 
   constructor(
     private storeService: StoreService,
