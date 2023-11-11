@@ -16,13 +16,14 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe((products) => {
+    this.productsService.getAll().subscribe((products) => {
+      console.log(products);
       this.products = products;
     });
   }
 
   onLoadMore(): void {
-    this.productsService.getAllProducts().subscribe((products) => {
+    this.productsService.getAll().subscribe((products) => {
       this.products = this.products.concat(products);
     });
   }

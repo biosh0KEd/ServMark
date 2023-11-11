@@ -35,6 +35,33 @@ export class ProductsComponent {
     this.showProductDetail = !this.showProductDetail;
   }
 
+  onShowDetail(id: number) {
+    this.statusDetail = 'loading';
+    this.toggleProductDetail();
+    this.productsService.getOne(id).subscribe({
+        next: (data) => { 
+          this.productChosen = data;
+          this.statusDetail = 'success';
+        },
+        error: (error) => { 
+          window.alert(error.message);
+          this.statusDetail = 'error';
+        }
+      }
+    );
+  }
+
+  deleteProduct() {
+    if (this.productChosen) {
+      const id = this.productChosen.id;
+      this.productsService.delete(id).subscribe(() => {
+        const productIndex = this.products.findIndex((product) => product.id === id);
+        this.products.splice(productIndex, 1);
+        this.showProductDetail = false;
+      });
+    }
+  }
+
   onLoadMore(): void {
     this.loadMore.emit();
   }

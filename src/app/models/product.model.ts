@@ -2,7 +2,7 @@ import { Category } from './category.model';
 import { Image } from './image.model';
 
 export interface Product {
-    id: string;
+    id: number;
     title: string;
     price: number;
     images: Image[];
