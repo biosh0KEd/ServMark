@@ -14,13 +14,10 @@
         <button (click)="toggleMenu()">Close</button>
         <ul>
             <li>
-                <a href="">All</a>
+                <a routerLinkActive="active" routerLink="home">All</a>
             </li>                
-            <li>
-                <a href="">Clothes</a>
-            </li>
-            <li>
-                <a href="">Electronics</a>
+            <li *ngFor="let category of categories">
+                <a routerLinkActive="active" [routerLink]="['/category', category.id]">{{ category.name }}</a>
             </li>
         </ul>
     </div>
@@ -33,13 +30,10 @@
             </a>
             <ul>
                 <li>
-                    <a href="">All</a>
+                    <a routerLinkActive="active" routerLink="home">All</a>
                 </li>                
-                <li>
-                    <a href="">Clothes</a>
-                </li>
-                <li>
-                    <a href="">Electronics</a>
+                <li *ngFor="let category of categories">
+                    <a routerLinkActive="active" [routerLink]="['/category', category.id]">{{ category.name }}</a>
                 </li>
             </ul>
         </nav>

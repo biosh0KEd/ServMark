@@ -22,7 +22,7 @@
     <h1>{{ productChosen.title }}</h1>
     <swiper-container slides-per-view="1">          
       <swiper-slide *ngFor="let img of productChosen.images">          
-        <img [src]="img.url" [alt]="img.alt"/>
+        <img width="100%" [src]="img.url" [alt]="img.alt"/>
       </swiper-slide>        
     </swiper-container>
     <p>{{ productChosen.description }}</p>
