@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StoreService } from '../../services/store.service';
-import { CategoriesService } from '../../services/categories.service';
-import { Category } from '../../models/category.model';
+import { StoreService } from '../../../services/store.service';
+import { CategoriesService } from '../../../services/categories.service';
+import { Category } from '../../../models/category.model';
 
 @Component({
   selector: 'app-nav',
