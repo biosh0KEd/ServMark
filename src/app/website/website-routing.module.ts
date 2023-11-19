@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CategoryComponent } from './pages/category/category.component';
 import { MyCartComponent } from './pages/my-cart/my-cart.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
@@ -38,8 +37,8 @@ const routes: Routes = [
         component: ProfileComponent
       },
       {
-        path: 'category/:id',
-        component: CategoryComponent
+        path: 'category',
+        loadChildren: () => import('./pages/category/category.module').then(m => m.CategoryModule)
       },
       {
         path: 'product/:id',

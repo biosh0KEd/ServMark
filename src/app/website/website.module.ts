@@ -7,7 +7,6 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SigninComponent } from './components/auth/signin/signin.component';
 import { HomeComponent } from './pages/home/home.component';
-import { CategoryComponent } from './pages/category/category.component';
 import { MyCartComponent } from './pages/my-cart/my-cart.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
@@ -21,8 +20,7 @@ import { SharedModule } from '../shared/shared.module';
     NavComponent,
     LoginComponent,
     SigninComponent,
-    HomeComponent,    
-    CategoryComponent,
+    HomeComponent,        
     MyCartComponent,
     RegisterComponent,
     RecoveryComponent,
