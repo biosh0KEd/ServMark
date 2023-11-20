@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "serv-mark:build:production"
+              "buildTarget": "serv-mark:build:production"
             },
             "development": {
-              "browserTarget": "serv-mark:build:development"
+              "buildTarget": "serv-mark:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "serv-mark:build"
+            "buildTarget": "serv-mark:build"
           }
         },
         "test": {
