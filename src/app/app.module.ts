@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,    
+    HttpClientModule,
+    QuicklinkModule    
   ],
   providers: [],
   bootstrap: [AppComponent],  
