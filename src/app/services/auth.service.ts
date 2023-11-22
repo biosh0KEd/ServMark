@@ -11,6 +11,7 @@ import { Auth } from '../models/auth.model';
 })
 export class AuthService {
   private _apiUrl = 'http://localhost:5116/api/auth';
+  
   private _user = new BehaviorSubject<User | null>(null);
   user$ = this._user.asObservable();
 
