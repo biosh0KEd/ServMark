@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { GridComponent } from './pages/grid/grid.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { BasicFormComponent } from './pages/basic-form/basic-form.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'grid',
         component: GridComponent
+      },
+      {
+        path: 'basic-form',
+        component: BasicFormComponent
       }
     ]
   }
