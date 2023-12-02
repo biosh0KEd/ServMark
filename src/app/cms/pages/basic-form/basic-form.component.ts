@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-basic-form',    
@@ -7,23 +7,20 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrl: './basic-form.component.sass'
 })
 export class BasicFormComponent implements OnInit {
-  form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    color: new FormControl('#000000'),
-    date: new FormControl(''),
-    number: new FormControl(123),
-    category: new FormControl('category-2'),
-    tag: new FormControl(['tag-1', 'tag-2']),
-    agree: new FormControl(false),
-    idType: new FormControl(''),
-    zone: new FormControl('')
-  });    
- 
+  form : FormGroup = new FormGroup({});
+  constructor(
+    private _formBuilder: FormBuilder
+    ) {     
+      this._buildForm();
+  }
   save(event : Event){
-    console.log(this.form.value);
-    console.log(event);
+    if (this.form.status === 'VALID'){
+      console.log(this.form.value);
+      console.log(event);
+    }
+    else {
+      this.form.markAllAsTouched();
+    }
   }
 
   get nameField(){
@@ -87,6 +84,22 @@ export class BasicFormComponent implements OnInit {
 
   get isNameFieldInvalid(){
     return this.nameField.touched && this.nameField.status === 'INVALID';
+  }
+
+  private _buildForm(){
+    this.form = this._formBuilder.group({
+      name: ['', [Validators.required, Validators.maxLength(10)]],
+      email: [''],
+      phone: ['', [Validators.required]],
+      color: ['#000000'],
+      date: [''],
+      number: [123],
+      category: ['category-2'],
+      tag: [['tag-1', 'tag-2']],
+      agree: [false],
+      idType: [''],
+      zone: ['']
+    });    
   }
 
 }

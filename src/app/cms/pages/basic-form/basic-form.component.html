@@ -70,15 +70,15 @@
     <p>
         Id Type: {{ idTypeField.value }}
         <label>        
-            <input name="id-type" type="radio" value="license" formControlName="idType">
+            <input name="idType" type="radio" value="license" formControlName="idType">
             License
         </label>
         <label>        
-            <input name="id-type" type="radio" value="passport" formControlName="idType">
+            <input name="idType" type="radio" value="passport" formControlName="idType">
             Passport
         </label>
         <label>        
-            <input name="id-type" type="radio" value="other" formControlName="idType">
+            <input name="idType" type="radio" value="other" formControlName="idType">
             Other
         </label>
     </p>
@@ -86,21 +86,21 @@
     <p>
         Zone: {{ zoneField.value }}
         <label>        
-            <input name="zones" type="radio" value="zone-1" formControlName="zone">
+            <input name="zone" type="radio" value="zone-1" formControlName="zone">
             Zone 1
         </label>
         <label>        
-            <input name="zones" type="radio" value="zone-2" formControlName="zone">
+            <input name="zone" type="radio" value="zone-2" formControlName="zone">
             Zone 2
         </label>
         <label>        
-            <input name="zones" type="radio" value="zone-3" formControlName="zone">
+            <input name="zone" type="radio" value="zone-3" formControlName="zone">
             Zone 3
         </label>
     </p>
 
     <p>
-        <button type="submit">Enviar</button>
+        <button [disabled]="form.status === 'INVALID'" type="submit">Enviar</button>
     </p>
 </form>
 
